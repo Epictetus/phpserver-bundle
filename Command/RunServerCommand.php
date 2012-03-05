@@ -31,18 +31,22 @@ class RunServerCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $host = $input->getOption('host');
-        $port = $input->getOption('port');
-        $env = $input->getOption('env');
-        $webroot = realpath($this->getApplication()->getKernel()->getRootDir() . '/../web');
-        $command = vsprintf(self::SERVER_COMMAND, compact('host', 'port', 'webroot'));
+        if (PHP_VERSION_ID < 50400) {
+            $output->writeln('<error>PHP 5.4.x is required to use this command.</error>');
+        } else {
+            $host = $input->getOption('host');
+            $port = $input->getOption('port');
+            $env = $input->getOption('env');
+            $webroot = realpath($this->getApplication()->getKernel()->getRootDir() . '/../web');
+            $command = vsprintf(self::SERVER_COMMAND, compact('host', 'port', 'webroot'));
 
-        $output->writeln(sprintf(self::SERVER_START, date('r')));
-        $output->writeln(sprintf(self::SERVER_URL, $host, $port, $env));
-        $output->writeln(sprintf(self::SERVER_WEBROOT, $webroot));
-        $output->writeln('');
-        $output->writeln(self::SERVER_CANCEL);
+            $output->writeln(sprintf(self::SERVER_START, date('r')));
+            $output->writeln(sprintf(self::SERVER_URL, $host, $port, $env));
+            $output->writeln(sprintf(self::SERVER_WEBROOT, $webroot));
+            $output->writeln('');
+            $output->writeln(self::SERVER_CANCEL);
 
-        system($command);
+            system($command);
+        }
     }
 }
