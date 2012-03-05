@@ -15,7 +15,7 @@ class RunServerCommand extends ContainerAwareCommand
 {
     const SERVER_COMMAND    = 'php -S %s:%d -t %s';
     const SERVER_START      = '<info>Symfony2 Development server started at </info><comment>%s</comment>';
-    const SERVER_URL        = '<info>Your application URL: </info><comment>http://%s:%d/app_%s.php</comment>';
+    const SERVER_URL        = '<info>Your application URL: </info><comment>http://%s:%d/app%s.php</comment>';
     const SERVER_WEBROOT    = '<info>Document root set to: </info><comment>%s</comment>';
     const SERVER_CANCEL     = '<info>Press </info><comment>Ctrl + C</comment><info> to quit.</info>';
     const PHP_ERROR         = '<error>PHP 5.4.x is required to use this command.</error>';
@@ -37,7 +37,7 @@ class RunServerCommand extends ContainerAwareCommand
         } else {
             $host = $input->getOption('host');
             $port = $input->getOption('port');
-            $env = $input->getOption('env');
+            $env = '_' . $input->getOption('env');
 
             if ($env === 'prod') {
                 $env = '';
