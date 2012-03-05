@@ -24,13 +24,13 @@ Add following lines to your `deps` file:
 
 Then run the `./bin/vendors install` command to download.
 
-### Using `git submodule` ###
+### Using `git submodule`: ###
 
 Run the following commands:
 
     $ git submodule add git://github.com/webkatte/phpserver-bundle.git vendor/bundles/Webkatte/PHPServerBundle
 
-### Using `git clone` ###
+### Using `git clone`: ###
 
     $ git clone git://github.com/webkatte/phpserver-bundle.git vendor/bundles/Webkatte/PHPServerBundle
 
