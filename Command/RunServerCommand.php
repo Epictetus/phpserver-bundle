@@ -37,6 +37,11 @@ class RunServerCommand extends ContainerAwareCommand
             $host = $input->getOption('host');
             $port = $input->getOption('port');
             $env = $input->getOption('env');
+
+            if ($env === 'prod') {
+                $env = '';
+            }
+
             $webroot = realpath($this->getApplication()->getKernel()->getRootDir() . '/../web');
             $command = vsprintf(self::SERVER_COMMAND, compact('host', 'port', 'webroot'));
 
