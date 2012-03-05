@@ -37,9 +37,9 @@ class RunServerCommand extends ContainerAwareCommand
         } else {
             $host = $input->getOption('host');
             $port = $input->getOption('port');
-            $env = $input->getOption('env');
+            $env = '_' . $input->getOption('env');
 
-            if ($env === 'prod') {
+            if ($env === '_prod') {
                 $env = '';
             }
 
