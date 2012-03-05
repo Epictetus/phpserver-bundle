@@ -74,7 +74,7 @@ And output should look like that:
 
 	Press Ctrl + C to quit.
 
-**And that's all - go to your application URL and you should your symfony app.**
+**And that's all - go to your application URL and you should see your symfony app.**
 
 If you want some configuration, run 
 
