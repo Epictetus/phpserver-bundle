@@ -34,7 +34,7 @@ Run the following commands:
 
     $ git clone git://github.com/webkatte/phpserver-bundle.git vendor/bundles/Webkatte/PHPServerBundle
 
-## Instalation ##
+## Installation ##
 
 You have to register `Webkatte` namespace in your `app/autoload.php`:
 
