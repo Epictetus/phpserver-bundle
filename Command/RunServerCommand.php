@@ -18,6 +18,7 @@ class RunServerCommand extends ContainerAwareCommand
     const SERVER_URL        = '<info>Your application URL: </info><comment>http://%s:%d/app_%s.php</comment>';
     const SERVER_WEBROOT    = '<info>Document root set to: </info><comment>%s</comment>';
     const SERVER_CANCEL     = '<info>Press </info><comment>Ctrl + C</comment><info> to quit.</info>';
+    const PHP_ERROR         = '<error>PHP 5.4.x is required to use this command.</error>';
 
     protected function configure()
     {
@@ -32,7 +33,7 @@ class RunServerCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if (PHP_VERSION_ID < 50400) {
-            $output->writeln('<error>PHP 5.4.x is required to use this command.</error>');
+            $output->writeln(self::PHP_ERROR);
         } else {
             $host = $input->getOption('host');
             $port = $input->getOption('port');
