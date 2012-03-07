@@ -2,18 +2,25 @@
     "name": "webkatte/phpserver-bundle",
     "type": "symfony-bundle",
     "description": "Console command for running PHP5.4's integrated web-server for Symfony2",
-    "keywords": ["server", "symfony"],
+    "keywords": [
+        "server",
+        "symfony"
+    ],
     "homepage": "https://github.com/webkatte/phpserver-bundle",
     "license": "MIT",
-    "authors": [{
-        "name": "Radosław Benkel",
-    }],
+    "authors": [
+        {
+            "name": "Radosław Benkel"
+        }
+    ],
     "require": {
         "php": "5.4.*",
-        "symfony/symfony": "2.*",
+        "symfony/symfony": "2.0.*"
     },
     "autoload": {
-        "psr-0": { "Webkatte\\PHPServerBundle": "" }
+        "psr-0": {
+            "Webkatte\\PHPServerBundle": ""
+        }
     },
     "target-dir": "Webkatte/PHPServerBundle"
 }
