@@ -1,0 +1,17 @@
+{
+    "name": "webkatte/phpserver-bundle",
+    "description": "Console command for running PHP5.4's integrated web-server for Symfony2",
+    "version": "0.1.0",
+    "require": {
+        "symfony/symfony": "2.0.*"
+    },
+    "authors": [
+        {
+            "name": "Radosław Benkel"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Webkatte\\PHPServerBundle": "" }
+    },
+    "target-dir": "Webkatte/PHPServerBundle"
+}
